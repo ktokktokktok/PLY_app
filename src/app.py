@@ -10,7 +10,8 @@ import numpy as np
 def predict_images(images):
     predictions = []
     net = Net().cpu().eval()
-    net.load_state_dict(torch.load(r'C:\Users\yuta1\OneDrive\デスクトップ\new_PLY\src\new3_ply.pt', map_location=torch.device('cpu')))
+    #ローカル net.load_state_dict(torch.load(r'src\\new3_ply.pt', map_location=torch.device('cpu')))
+    net.load_state_dict(torch.load(r'new3_ply.pt', map_location=torch.device('cpu')))
     for img_array in images:
         # NumPyの配列に変換
         img_array_np = np.array(img_array)
